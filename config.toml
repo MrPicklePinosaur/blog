@@ -1,0 +1,16 @@
+base_url = "https://blog.danieliu.xyz"
+title = "pinosaur's blog"
+description = "random blurbs about software and japanese"
+default_language = "en"
+
+compile_sass = false
+build_search_index = true
+
+generate_feed = true
+feed_filename = "atom.xml"
+
+[markdown]
+highlight_code = true
+render_emoji = true
+
+[extra]
