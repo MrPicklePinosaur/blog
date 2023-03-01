@@ -124,3 +124,25 @@ hr {
     margin-left: 1rem;
     margin-right: 1rem;
 }
+.top-bar li:last-child {
+    position: absolute;
+    right: 0;
+}
+
+#search[type=text] {
+    background-color: var(--bg-light);
+    border: none;
+    color: var(--text-light);
+}
+#search[type=text]:focus {
+}
+.search-results {
+    background-color: var(--bg-light);
+    position: absolute;
+    width: 20%;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    right: 0;
+    left: auto;
+}

@@ -25,4 +25,6 @@ include_description = false
 include_content = true
 truncate_content_length = 100
 
+index_format = "elasticlunr_json"
+
 [extra]

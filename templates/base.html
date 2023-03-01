@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="{{ get_url(path="blog-page.css") }}"/>
         <link rel="shortcut icon" href="#">
 
+        <script src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+        <script src="{{ get_url(path="search.js") }}"></script>
+
         {% block rss %}
           <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
         {% endblock %}
@@ -22,7 +25,16 @@
             <li><a href="{{ get_url(path="archive/") }}">archive</a></li>
             |
             <li><a href="https://github.com/MrPicklePinosaur/blog">source</a></li>
+            <li>
+                <input type="text" id="search" placeholder="search">
+            </li>
         </ul>
+
+        <div class="search-results">
+            <h3>Search Results</h3>
+            <ul class="search-results__items">
+            </ul>
+        </div>
 
         <section class="section">
             <div class="container">
