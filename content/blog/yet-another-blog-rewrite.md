@@ -3,7 +3,13 @@ title = "Yet another blog rewrite"
 date = 2023-02-26
 +++
 
-So somehow I have managed to rewrite my blog once again. This time we are using
+```rust
+fn main() {
+    println!("hello world");
+}
+```
+
+So somehow I have managed to rewrite my blog *once again*. This time we are using
 [zola](https://getzola.org), which is a static site generator written in rust.
 It's pretty nice since you can do everything in markdown and it comes with a
 bunch of features like search index, syntax highlighting etc. I have finally
@@ -30,8 +36,4 @@ script it could be a pretty decent and lightweight static blog generator.
 Needless to say, I got a bit tired of writing shell scripts for my blogs and
 just wanted something that works and has all the features I wanted. So that's
 why I'm using a prebuild tool for once. Perhaps if I get bored I'll write
-another blog script but we shall see.
-
-
-
-
+another blog script but we shall see :yum:.
