@@ -112,3 +112,15 @@ hr {
 .back-button:hover {
     color: var(--text-light);
 }
+
+.top-bar {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: .7rem;
+    display: flex;
+}
+.top-bar li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

@@ -9,6 +9,11 @@ build_search_index = true
 generate_feed = true
 feed_filename = "atom.xml"
 
+taxonomies = [
+    { name = "software" },
+    { name = "japanese" },
+]
+
 [markdown]
 highlight_code = true
 highlight_theme = "monokai"

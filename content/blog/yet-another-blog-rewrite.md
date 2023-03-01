@@ -1,6 +1,7 @@
 +++
 title = "Yet another blog rewrite"
 date = 2023-02-26
+
 +++
 
 ```rust
@@ -37,3 +38,4 @@ Needless to say, I got a bit tired of writing shell scripts for my blogs and
 just wanted something that works and has all the features I wanted. So that's
 why I'm using a prebuild tool for once. Perhaps if I get bored I'll write
 another blog script but we shall see :yum:.
+
