@@ -5,6 +5,10 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="#">
         <link rel="shortcut icon" href="#">
+
+        {% block rss %}
+          <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+        {% endblock %}
     </head>
 
     <body>

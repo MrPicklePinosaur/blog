@@ -11,6 +11,13 @@ feed_filename = "atom.xml"
 
 [markdown]
 highlight_code = true
+highlight_theme = "monokai"
 render_emoji = true
+
+[search]
+include_title = true
+include_description = false
+include_content = true
+truncate_content_length = 100
 
 [extra]
