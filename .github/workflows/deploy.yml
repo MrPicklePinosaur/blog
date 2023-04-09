@@ -28,29 +28,29 @@ jobs:
           tags: |
             ghcr.io/mrpicklepinosaur/blog:latest
             ghcr.io/mrpicklepinosaur/blog:${{ github.sha }}
-  deploy:
-    name: Deploy
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set the Kubernetes context
-        uses: azure/k8s-set-context@v2
-        with:
-          method: service-account
-          k8s-url: ${{ secrets.KUBERNETES_SERVER_URL }}
-          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+  # deploy:
+  #   name: Deploy
+  #   needs: [ build ]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Set the Kubernetes context
+  #       uses: azure/k8s-set-context@v2
+  #       with:
+  #         method: service-account
+  #         k8s-url: ${{ secrets.KUBERNETES_SERVER_URL }}
+  #         k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
 
-      - name: Checkout source code
-        uses: actions/checkout@v3
+  #     - name: Checkout source code
+  #       uses: actions/checkout@v3
 
-      - name: Deploy to the Kubernetes cluster
-        uses: azure/k8s-deploy@v1
-        with:
-          namespace: default
-          manifests: |
-            k8s/deployments/blog.yaml
-            k8s/ingress/blog.yaml
-            k8s/services/blog.yaml
-          images: |
-            ghcr.io/MrPicklePinosaur/blog:${{ github.sha }}
+  #     - name: Deploy to the Kubernetes cluster
+  #       uses: azure/k8s-deploy@v1
+  #       with:
+  #         namespace: default
+  #         manifests: |
+  #           k8s/deployments/blog.yaml
+  #           k8s/ingress/blog.yaml
+  #           k8s/services/blog.yaml
+  #         images: |
+  #           ghcr.io/MrPicklePinosaur/blog:${{ github.sha }}
 
