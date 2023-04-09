@@ -43,14 +43,14 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-#       - name: Deploy to the Kubernetes cluster
-#         uses: azure/k8s-deploy@v1
-#         with:
-#           namespace: default
-#           manifests: |
-#             kubernetes/deployment.yaml
-#             kubernetes/ingress.yaml
-#             kubernetes/service.yaml
-#           images: |
-#             ghcr.io/MrPicklePinosaur/blog:${{ github.sha }}
+      - name: Deploy to the Kubernetes cluster
+        uses: azure/k8s-deploy@v1
+        with:
+          namespace: default
+          manifests: |
+            k8s/deployments/blog.yaml
+            k8s/ingress/blog.yaml
+            k8s/services/blog.yaml
+          images: |
+            ghcr.io/MrPicklePinosaur/blog:${{ github.sha }}
 
