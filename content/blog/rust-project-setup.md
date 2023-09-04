@@ -3,7 +3,7 @@ title = "cargo-generateでrustプロジェクトを作り方"
 date = 2023-08-28
 +++
 
-rust開発者たちは新しいプロジェクトを作成する時に手動で何度でも同じように設定するかもしれません。これは大変ですから、今日は[cargo-generate](https://github.com/cargo-generate/cargo-generate)でテンプレートレポジトリの作り方をご案内します。完成させたテンプレートプロジェクトに興味が持つ方は[こちら](https://github.com/MrPicklePinosaur/pino_template)にご覧ください。
+Rust開発者たちは新しいプロジェクトを作成するたびに、同じ設定を手動で何度も行う必要があるかもしてません。これは大変ですから、今日は[cargo-generate](https://github.com/cargo-generate/cargo-generate)でテンプレートレポジトリの作り方を紹介したいと思います。完成したテンプレートプロジェクトに興味がある方は、[こちら](https://github.com/MrPicklePinosaur/pino_template)をご覧ください。
 
 ☆では、始めましょう☆。
 
@@ -14,7 +14,7 @@ cd rust_template
 cargo init
 ```
 
-テンプレートから新しいプロジェクトを作成する時にリモートgitリポジトリがあるほうが便利ですので、リモートリポジトリ（githubやgitlabなど)にプッシュすることがおすすめです。
+テンプレートから新しいプロジェクトを作成する時に、リモートgitリポジトリを持っていると便利です。そのため、リモートリポジトリ（githubやgitlabなど)にプッシュすることをおすすめします。
 
 ## フォーマッター
 
@@ -117,12 +117,29 @@ cargo clippy
 
 ## cargo-generate
 
-`cargo-generate`をインストールします。
+まず`cargo-generate`をインストールします。おそらくすこし時間がかかります。
 ```sh
 cargo install cargo-generate
 ```
 
-`cargo-generate`はテクストテンプレート化の機能
+`cargo-generate`はテクストテンプレート化の機能があります。プロジェクトがテンプレートから作成する時にプレースホルダは[組み込みの変数](https://cargo-generate.github.io/cargo-generate/templates/builtin_placeholders.html)の値で置き換えられます。以下はクレート名によって`Cargo.toml`で設定する例です。
+```toml
+[package]
+name = "{{crate_name}}"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["{{authors}}"]
+description = ""
+repository = ""
+```
+`Cargo.toml`に限らわず、どこでもこのプレースホルダ文法が使用できます。ぜひ自分に合わせる設定してみてください！
 
-読んでいただきありがとうございます。
+新しいプロジェクトを作成したい場合、このコマンドを実行します。
+```sh
+cargo generate --git <git-url> -f --name <プロジェクト名>
+````
+<git-url>`はテンプレートのリモートレポジトリのURLです。代わりに`--git`フラグではなく`--path`フラグでローカルファイルシステムからテンプレートレポジトリを使用できます（詳細について`cargo-generate`のマニュアルを読んでみてください）。
+
+では、以上になります！読んでいただきありがとうございました！
 
