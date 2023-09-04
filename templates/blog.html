@@ -11,6 +11,7 @@
     {% for page in section.pages %}
     <div>
     <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+    <p class="subtitle"><strong>{{ page.date }}</strong></p>
     {{ page.content | safe }}
     </div>
     {% endfor %}
