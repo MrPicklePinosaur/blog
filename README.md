@@ -7,7 +7,7 @@ yet another blog rewrite
 
 this blog is powered by [zola](https://getzola.org), you can serve the blog with
 ```sh
-zola serve
+just serve
 ```
 
 ## GITHUB ACTIONS SETUP
@@ -19,6 +19,13 @@ kubectl config view --minify -o 'jsonpath={.clusters[0].cluster.server}'
 ```
 
 Also add the secret `KUBERNETES_SECRET` 
+
+## DEPLOYMENT
+
+Currently, this blog is deployed onto my own kubernetes cluster. To push the
+latest changes to the cluster, build the blog container and push the image to
+github's container registry. The entire build a push process is automated as a
+github action.
 
 ## TODO
 
