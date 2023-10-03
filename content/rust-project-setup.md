@@ -1,5 +1,5 @@
 +++
-title = "cargo-generateでrustプロジェクトを作り方"
+title = "cargo-generateを使ってrustプロジェクトを作る方法"
 date = 2023-08-28
 +++
 
