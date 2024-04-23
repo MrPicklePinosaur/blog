@@ -1,7 +1,6 @@
 +++
 title = "PSA: so git worktree exists..."
 date = 2024-04-23
-draft = true
 +++
 
 Recently for work related things I find myself having to juggle development and
